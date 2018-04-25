@@ -1,0 +1,115 @@
+@mixin tao{
+    margin: 0;
+    padding: 0;
+}
+@mixin fs($fs){
+    font-size: $fs;
+}
+@mixin fw($fw){
+    font-weight: $fw;
+}
+@mixin oh{
+    overflow: hidden;
+}
+@mixin ls{
+    list-style: none;
+}
+@mixin td{
+    text-decoration: none;
+}
+@mixin pd($pd,$dp){
+    padding:$pd $dp;
+}
+@mixin wh($width,$height){
+    width: $width;
+    height: $height;
+}
+@mixin bgc($color){
+    background-color: $color;
+}
+@mixin color($color){
+    color: $color;
+}
+@mixin dingwei($dw,$top,$left){
+    @if($dw == 1){
+        position: relative;
+    }
+    @if($dw == 2){
+        position: absolute;
+        
+         @if($left){
+           left: $left; 
+        }@else{
+            left: auto;
+        }
+        @if($top){
+            top: $top;
+        }@else{
+            top: auto;
+        } 
+    }
+    @if($dw == 3){
+        position: fixed;
+        top: $top;
+        left: $left;
+    }
+}
+@mixin ol($color){
+    outline: 1px solid $color;
+}
+
+@mixin float($fd){
+    @if($fd == 1){
+        float: left;
+    }@else{
+        float: right;
+    }
+}
+@mixin bg{
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+@mixin ml($ml){
+    margin-left: $ml;
+}
+@mixin mt($mt){
+    margin-top: $mt;
+}
+@mixin mr($mr){
+    margin-right: $mr;
+}
+@mixin mb($mb){
+    margin-bottom: $mb;
+}
+@mixin margin($margin){
+    margin:$margin auto;
+
+}
+@mixin ta{
+    text-align: center;
+}
+@mixin lh($lh){
+    line-height: $lh;
+}
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin bg-img($url) {
+    background-image: url('../../resource/img/'+$url+'@2x.png');
+    @media(-webkit-min-device-pixel-ratio: 3), (min-device-pixel-ratio:3) {
+      background-image: url('../../resource/img/'+$url+'@3x.png');
+    }
+  }
